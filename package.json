@@ -1,0 +1,74 @@
+{
+  "name": "@scriptless/react-dice",
+  "version": "1.0.0-rc.3",
+  "description": "A React dice component.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siteless/react-dice.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Gus Nordhielm",
+    "url": "https://gus.siteless.co"
+  },
+  "keywords": [
+    "react",
+    "dice",
+    "animation",
+    "inky",
+    "blobby",
+    "games"
+  ],
+  "type": "module",
+  "exports": "./build/index.js",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": [
+    "build",
+    "LICENSE.md",
+    "README.md",
+    "dice_demo.gif"
+  ],
+  "scripts": {
+    "build": "tsup && cp src/styles.css build/styles.css",
+    "typecheck": "tsc --noEmit",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "pub": "yarn run build && npm publish --access public",
+    "start": "yarn run storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "eslint-plugin-storybook": "^0.9.0",
+    "react": "18.3.1",
+    "storybook": "^8.3.5",
+    "tsconfig": "*",
+    "tsup": "^8.3.5",
+    "typescript": "5.6.3"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}
