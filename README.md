@@ -139,7 +139,7 @@ MIT © Gus Nordhielm
 ## To do, contributions welcome
 
 - [x] Better same-to-same number animations, e.g. two dots should switch sides, one dot should pulse
-- [] Use rolling as a loader, when I'm waiting for an async getNextValue, I should see feedback immediately
-- [] When I rapid click a dice item, they weirdly alternate rolls
-- [] Custom colors are causing weird behaviors - e.g. dark bg with dark pips make them bleed a lot, perhaps there's a way of using b/w pips and then masking them over the background. Also the background is flashing with the contrast setting.
-- [] On initial click, there's like a little bounce - but this happens inconsistently and sometimes twice, worth making that consistent
+- [ ] Use rolling as a loader, when I'm waiting for an async getNextValue, I should see feedback immediately
+- [ ] When I rapid click a dice item, they weirdly alternate rolls
+- [ ] Custom colors are causing weird behaviors - e.g. dark bg with dark pips make them bleed a lot, perhaps there's a way of using b/w pips and then masking them over the background. Also the background is flashing with the contrast setting.
+- [ ] On initial click, there's like a little bounce - but this happens inconsistently and sometimes twice, worth making that consistent
