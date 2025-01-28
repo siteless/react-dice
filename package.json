@@ -1,6 +1,6 @@
 {
   "name": "@scriptless/react-dice",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "A React dice component.",
   "repository": {
     "type": "git",
@@ -24,11 +24,20 @@
     "games"
   ],
   "type": "module",
-  "exports": "./build/index.js",
-  "main": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "require": "./build/index.cjs",
+      "types": "./index.ts"
+    },
+    "./styles.css": "./build/styles.css"
+  },
+  "main": "./build/index.js",
+  "module": "./build/index.js",
   "types": "./index.ts",
   "files": [
     "build",
+    "index.ts",
     "LICENSE.md",
     "README.md",
     "dice_demo.gif"
