@@ -22,19 +22,19 @@ npm install @scriptless/react-dice --save
 ## Basic Usage
 
 ```jsx
-import { Dice } from '@scriptless/react-dice';
-import '@scriptless/react-dice/styles.css';
+import { Dice } from "@scriptless/react-dice";
+import "@scriptless/react-dice/styles.css";
 
 function App() {
-  return <Dice onChange={(value) => console.log('New value:', value)} />;
+  return <Dice onChange={(value) => console.log("New value:", value)} />;
 }
 ```
 
 ## Group Usage
 
 ```jsx
-import { DiceGroup, Dice } from '@scriptless/react-dice';
-import '@scriptless/react-dice/styles.css';
+import { DiceGroup, Dice } from "@scriptless/react-dice";
+import "@scriptless/react-dice/styles.css";
 
 function App() {
   const diceValueFromServer = useFetchValue();
@@ -50,9 +50,9 @@ function App() {
     >
       <Dice />
       {/* dice will work with any arbitrary dom structure */}
-      <div style={{ border: '1px solid black', padding: 40 }}>
+      <div style={{ border: "1px solid black", padding: 40 }}>
         <Dice />
-        <div style={{ position: 'absolute', top: 0 }}>
+        <div style={{ position: "absolute", top: 0 }}>
           <Dice />
         </div>
       </div>
@@ -104,7 +104,7 @@ const CustomDice = () => {
   ] = useState(undefined);
 
   const getNextValue = async () => {
-    const response = await fetch('https://api.random.org/v1/dice');
+    const response = await fetch("https://api.random.org/v1/dice");
     const data = await response.json();
     return data.value;
   };
@@ -141,5 +141,5 @@ MIT © Gus Nordhielm
 - [x] Better same-to-same number animations, e.g. two dots should switch sides, one dot should pulse
 - [ ] Use rolling as a loader, when I'm waiting for an async getNextValue, I should see feedback immediately
 - [ ] When I rapid click a dice item, they weirdly alternate rolls
-- [ ] Custom colors are causing weird behaviors - e.g. dark bg with dark pips make them bleed a lot, perhaps there's a way of using b/w pips and then masking them over the background. Also the background is flashing with the contrast setting.
 - [ ] On initial click, there's like a little bounce - but this happens inconsistently and sometimes twice, worth making that consistent
+- [ ] Custom colors are causing weird behaviors - e.g. dark bg with dark pips make them bleed a lot, perhaps there's a way of using b/w pips and then masking them over the background. Also the background is flashing with the contrast setting.
