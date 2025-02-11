@@ -396,7 +396,7 @@ const createAndReArrangePips = (
     if (!pipTransition) continue;
 
     if (Array.isArray(pipTransition)) {
-      pipTransition.forEach(splitToKey => {
+      pipTransition.forEach((splitToKey) => {
         transitionPose[splitToKey] = last.pose[key];
       });
     } else {
@@ -540,7 +540,7 @@ export const Dice = ({
     const animationSequence = async () => {
       // 1: create and re arrange pips if needed
 
-      setRenderPose(last => {
+      setRenderPose((last) => {
         const isReduction = (value || 0) < (last.value || value || 0);
 
         if (isReduction) return last;
@@ -552,10 +552,10 @@ export const Dice = ({
         };
       });
 
-      await new Promise(resolve => requestAnimationFrame(resolve));
+      await new Promise((resolve) => requestAnimationFrame(resolve));
 
       // 2: animate pips to position
-      setRenderPose(last => {
+      setRenderPose((last) => {
         const isReduction = (value || 0) < (last.value || value || 0);
 
         if (isReduction)
@@ -572,11 +572,11 @@ export const Dice = ({
         };
       });
 
-      await new Promise(resolve =>
+      await new Promise((resolve) =>
         setTimeout(resolve, totalAnimationDuration + anumationDurationBuffer),
       );
 
-      await new Promise(resolve => requestAnimationFrame(resolve));
+      await new Promise((resolve) => requestAnimationFrame(resolve));
 
       // 3: delete and re arrange pips if needed
       setRenderPose({
@@ -585,12 +585,12 @@ export const Dice = ({
         value,
       });
 
-      await new Promise(resolve => requestAnimationFrame(resolve));
+      await new Promise((resolve) => requestAnimationFrame(resolve));
 
       // Clean up after animation
       isRunningRef.current = false;
       setRolling(false);
-      setAnimateValuesQueue(last => last.slice(1));
+      setAnimateValuesQueue((last) => last.slice(1));
 
       if (animateValuesQueue.length === 1) {
         onChange?.(value);
@@ -632,7 +632,7 @@ export const Dice = ({
       });
       setAnimateValuesQueue(animateValues);
 
-      await new Promise(resolve =>
+      await new Promise((resolve) =>
         setTimeout(resolve, totalAnimationDuration * animateValues.length),
       );
 
@@ -653,54 +653,6 @@ export const Dice = ({
 
   return (
     <>
-      {/* <style>
-        {`
-            @keyframes ${animationContrastKeyframesName} {
-              0% {
-                filter: contrast(1);
-              }
-              20% {
-                filter: contrast(16);
-              }
-              50% {
-                filter: contrast(16);
-              }
-              80% {
-                filter: contrast(1);
-              }
-            }
-
-            @keyframes ${animationBlurKeyframesName} {
-              0% {
-                filter: blur(0px);
-              }
-              20% {
-                filter: blur(3px);
-              }
-              50% {
-                filter: blur(3px);
-              }
-              80% {
-                filter: blur(0px);
-              }
-            }
-
-            @keyframes ${animationScaleKeyframesName} {
-              0% {
-                transform: scale(0.9);
-              }
-              20% {
-                transform: scale(1.2);
-              }
-              50% {
-                transform: scale(1.1);
-              }
-              80% {
-                transform: scale(0.9);
-              }
-            }
-        `}
-      </style> */}
       <div
         style={{
           height: size,
@@ -744,7 +696,7 @@ export const Dice = ({
               width: size,
             }}
           >
-            {pips.map(key => {
+            {pips.map((key) => {
               const pipPose = renderPose.pose[key];
               if (!pipPose)
                 return (
